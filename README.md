@@ -1,3 +1,4 @@
+由于原来app升级项目不更新，fork一份维护升级
 
 > 官网地址：[http://laomengit.com/plugin/upgrade.html](http://laomengit.com/plugin/upgrade.html)
 
