@@ -28,7 +28,7 @@ flutter:
   plugin:
     platforms:
       android:
-        androidPackage: com.flutter.flutter_app_upgrade
+        package: com.flutter.flutter_app_upgrade
       ios:
         pluginClass: FlutterAppUpgradePlugin
   # To add assets to your plugin package, add an assets section, like this:
