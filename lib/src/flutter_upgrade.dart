@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_app_upgrade/flutter_app_upgrade.dart';
+import 'package:flutter_app_upgrade2/flutter_app_upgrade2.dart';
 
 class FlutterUpgrade {
   static const MethodChannel _channel = const MethodChannel('flutter_app_upgrade');

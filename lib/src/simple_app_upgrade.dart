@@ -2,8 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_upgrade/flutter_app_upgrade.dart';
-import 'package:flutter_app_upgrade/src/download_status.dart';
+import 'package:flutter_app_upgrade2/flutter_app_upgrade2.dart';
 
 import 'liquid_progress_indicator.dart';
 
