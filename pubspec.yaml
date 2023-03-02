@@ -27,10 +27,10 @@ flutter:
   # adding or updating assets for this project.
   plugin:
     platforms:
-      android:
-        package: com.flutter.flutter_app_upgrade
-      ios:
-        pluginClass: FlutterAppUpgradePlugin
+        android:
+          package: com.flutter.flutter_app_upgrade
+        ios:
+          pluginClass: FlutterAppUpgradePlugin
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
