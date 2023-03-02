@@ -124,7 +124,9 @@ public class FlutterAppUpgradePlugin : FlutterPlugin, MethodCallHandler, Activit
       if (nameEmpty || classEmpty) {
         goToMarket.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
       } else {
-        goToMarket.setClassName(marketPackageName!!, marketClassName!!)
+        if (marketPackageName != null && marketClassName != null) {
+          goToMarket.setClassName(marketPackageName, marketClassName)
+        }
       }
       context.startActivity(goToMarket)
     } catch (e: ActivityNotFoundException) {
@@ -156,7 +158,7 @@ public class FlutterAppUpgradePlugin : FlutterPlugin, MethodCallHandler, Activit
     val manager = context.packageManager
     val intent = Intent().setPackage(packageName)
     val infos = manager.queryIntentActivities(intent,
-            PackageManager.GET_INTENT_FILTERS)
+      PackageManager.GET_INTENT_FILTERS)
     return if (infos == null || infos.size < 1) {
       false
     } else {
