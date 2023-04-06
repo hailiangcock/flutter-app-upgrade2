@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:flutter_app_upgrade/flutter_app_upgrade2.dart';
+import 'package:flutter_app_upgrade2/flutter_app_upgrade2.dart';
 
 void main() => runApp(MyApp());
 

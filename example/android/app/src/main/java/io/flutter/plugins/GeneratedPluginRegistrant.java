@@ -18,7 +18,7 @@ public final class GeneratedPluginRegistrant {
     try {
       flutterEngine.getPlugins().add(new com.flutter.flutter_app_upgrade.FlutterAppUpgradePlugin());
     } catch(Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_app_upgrade, com.flutter.flutter_app_upgrade.FlutterAppUpgradePlugin", e);
+      Log.e(TAG, "Error registering plugin flutter_app_upgrade2, com.flutter.flutter_app_upgrade.FlutterAppUpgradePlugin", e);
     }
   }
 }

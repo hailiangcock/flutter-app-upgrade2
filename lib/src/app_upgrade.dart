@@ -70,6 +70,7 @@ class AppUpgrade {
             context, appUpgradeInfo.title, appUpgradeInfo.contents,
             apkDownloadUrl: appUpgradeInfo.apkDownloadUrl,
             force: appUpgradeInfo.force,
+            testflight: appUpgradeInfo.testflight,
             titleStyle: titleStyle,
             contentStyle: contentStyle,
             cancelText: cancelText,
@@ -100,6 +101,7 @@ class AppUpgrade {
     List<String> contents, {
     String apkDownloadUrl,
     bool force = false,
+    bool testflight = false,
     TextStyle titleStyle,
     TextStyle contentStyle,
     String cancelText,
@@ -129,30 +131,30 @@ class AppUpgrade {
                     borderRadius:
                         BorderRadius.all(Radius.circular(borderRadius))),
                 child: SimpleAppUpgradeWidget(
-                  title: title,
-                  titleStyle: titleStyle,
-                  contents: contents,
-                  contentStyle: contentStyle,
-                  cancelText: cancelText,
-                  cancelTextStyle: cancelTextStyle,
-                  okText: okText,
-                  okTextStyle: okTextStyle,
-                  okBackgroundColors: okBackgroundColors ??
-                      [
-                        Theme.of(context).primaryColor,
-                        Theme.of(context).primaryColor
-                      ],
-                  progressBarColor: progressBarColor,
-                  borderRadius: borderRadius,
-                  downloadUrl: apkDownloadUrl,
-                  force: force,
-                  iosAppId: iosAppId,
-                  appMarketInfo: appMarketInfo,
+                    title: title,
+                    titleStyle: titleStyle,
+                    contents: contents,
+                    contentStyle: contentStyle,
+                    cancelText: cancelText,
+                    cancelTextStyle: cancelTextStyle,
+                    okText: okText,
+                    okTextStyle: okTextStyle,
+                    okBackgroundColors: okBackgroundColors ??
+                        [
+                          Theme.of(context).primaryColor,
+                          Theme.of(context).primaryColor
+                        ],
+                    progressBarColor: progressBarColor,
+                    borderRadius: borderRadius,
+                    downloadUrl: apkDownloadUrl,
+                    force: force,
+                    testflight: testflight,
+                    iosAppId: iosAppId,
+                    appMarketInfo: appMarketInfo,
                     onCancel: onCancel,
                     onOk: onOk,
                     downloadProgress: downloadProgress,
-                    downloadStatusChange: downloadStatusChange
-                )),
+                    downloadStatusChange: downloadStatusChange)),
           );
         });
   }
@@ -171,7 +173,8 @@ class AppUpgradeInfo {
       {@required this.title,
       @required this.contents,
       this.apkDownloadUrl,
-      this.force = false});
+      this.force = false,
+      this.testflight = false});
 
   ///
   /// title,显示在提示框顶部
@@ -192,6 +195,11 @@ class AppUpgradeInfo {
   /// 是否强制升级
   ///
   final bool force;
+
+  ///
+  /// 是否跳转testflight
+  ///
+  final bool testflight;
 }
 
 ///

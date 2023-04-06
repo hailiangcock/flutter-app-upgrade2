@@ -33,6 +33,14 @@ class FlutterUpgrade {
   }
 
   ///
+  /// 跳转到ios Test Flight
+  ///
+  static toTestFlight(String id) async {
+    var map = {'id': id};
+    return await _channel.invokeMethod('toTestFlight', map);
+  }
+
+  ///
   /// 跳转到ios app store
   ///
   static toAppStore(String id) async {

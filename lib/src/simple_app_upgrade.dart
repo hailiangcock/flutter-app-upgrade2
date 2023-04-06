@@ -25,6 +25,7 @@ class SimpleAppUpgradeWidget extends StatefulWidget {
       this.borderRadius = 10,
       this.downloadUrl,
       this.force = false,
+      this.testflight = false,
       this.iosAppId,
       this.appMarketInfo,
       this.onCancel,
@@ -101,6 +102,11 @@ class SimpleAppUpgradeWidget extends StatefulWidget {
   /// 是否强制升级,设置true没有取消按钮
   ///
   final bool force;
+
+  ///
+  /// 是否跳转testflight
+  ///
+  final bool testflight;
 
   ///
   /// ios app id,用于跳转app store
@@ -305,8 +311,13 @@ class _SimpleAppUpgradeWidget extends State<SimpleAppUpgradeWidget> {
   _clickOk() async {
     widget.onOk?.call();
     if (Platform.isIOS) {
-      //ios 需要跳转到app store更新，原生实现
-      FlutterUpgrade.toAppStore(widget.iosAppId);
+      if (widget.testflight) {
+        //ios 需要跳转到Test Flight更新，原生实现
+        FlutterUpgrade.toTestFlight(widget.iosAppId);
+      } else {
+        //ios 需要跳转到app store更新，原生实现
+        FlutterUpgrade.toAppStore(widget.iosAppId);
+      }
       return;
     }
     if (widget.downloadUrl == null || widget.downloadUrl.isEmpty) {
@@ -350,7 +361,7 @@ class _SimpleAppUpgradeWidget extends State<SimpleAppUpgradeWidget> {
     } catch (e) {
       print('$e');
       _downloadProgress = 0;
-      _updateDownloadStatus(DownloadStatus.error,error: e);
+      _updateDownloadStatus(DownloadStatus.error, error: e);
     }
   }
 
